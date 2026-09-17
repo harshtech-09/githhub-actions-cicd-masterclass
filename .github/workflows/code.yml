@@ -1,11 +1,18 @@
-name: build
+# Name of the workflow
+name: Code
 
-on:
+# when the workflow should run
+on: 
   workflow_call:
 
+# jobs in the workflow
 jobs:
   code-checkout:
-     runs-on: ububtu-latest
-     steps:
-       - name: Build the code
-         run: echo "Code Build using Docker"
+    runs-on: ubuntu-latest
+    # steps in the workflow
+    steps:
+      - name: Clone the code
+        uses: actions/checkout@v7
+
+      - name: Print the message
+        run: echo "Code Cloned"
