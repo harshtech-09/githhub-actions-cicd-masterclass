@@ -1,0 +1,17 @@
+name: CICD Pipeline
+
+on:
+  push:
+
+jobs:
+  code:
+    uses: ./.github/workflows/code.yml
+  build:
+    uses: ./.github/workflows/code.yml
+    needs: code
+  test:
+    uses: ./.github/workflows/code.yml
+    needs: build
+  deploy:  
+    uses: ./.github/workflows/code.yml
+    needs: test
