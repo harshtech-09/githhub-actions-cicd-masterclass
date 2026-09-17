@@ -1,0 +1,11 @@
+name: test
+
+on:
+  workflow_call:
+
+jobs:
+  code-checkout:
+     runs-on: ububtu-latest
+     steps:
+       - name: Build the code
+         run: echo "Code Build using Docker"
