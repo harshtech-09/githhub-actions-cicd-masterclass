@@ -1,11 +1,11 @@
-name: test
+name: Test
 
-on:
-  workflow_call:
+on: # trigger
+  workflow_call: # whenever this workflow needs to be called from another
 
 jobs:
-  code-checkout:
-     runs-on: ububtu-latest
-     steps:
-       - name: Build the code
-         run: echo "Code Build using Docker"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the code
+        run: echo "Code Test using Sonar / Pytest"
